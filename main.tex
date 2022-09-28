@@ -61,7 +61,7 @@
 
 \begin{document}
  
-\title{ \includegraphics[width=0.18\linewidth]{corbu.jpg} \hspace{2.5cm} \normalsize \textsc{TP Industrialisation \hspace{2.5cm} \includegraphics[width=0.2\linewidth]{btscprp.png}}
+\title{ \includegraphics[width=0.18\linewidth]{corbu.jpg} \hspace{2cm} \normalsize \textsc{TP Industrialisation noté \hspace{2cm} \includegraphics[width=0.2\linewidth]{btscprp.png}}
 		\\ [2.0cm]
 		\HRule{0.5pt} \\
 		\LARGE \textbf{\uppercase{TP1.4 Axes Machines \& architecture des MOCN}}
@@ -100,6 +100,9 @@ Nom :  \hspace{5cm} Prénom : \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%% MACHINE 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Conseils pour le TP:}
+\textit{Comme pour tous les TPs, il est conseillé de lire toutes les pages une première fois, comme pour un sujet de BTS. Vous noterez que beaucoup d'informations sont dans les annexes (comme au BTS). Certaines définitions et figures sont "en plus". Avant de poser une question, lisez bien tout le dossier. Ne perdez pas de temps, car les TPs sont fait pour la durée entière : 3h. En plus de comprendre et apprendre, vous devrez écrire vos réponses au propre. Il vous est fortement conseillé de vous partager le travail entre vous deux.}\\
 
 Une machine outil à commande numérique, appelée communément MOCN, est un système
 automatisé. Elle est composée d’une partie commande (PC) : le DCN (directeur de commande
@@ -286,6 +289,13 @@ Pour rappel, il existe différentes façon de structurer un système. Des exempl
 
 
 \section{Système d'axe des machines outil}
+\textit{Compétences travaillées :
+\begin{itemize}
+    \item S7.4.1 : Système d’axe des machines
+    \item S11.1.2 : Machines à 5 axes continus
+\end{itemize}
+ }
+
 % Aide question : http://philippe.berger2.free.fr/productique/ressources/origines/origines.htm %%%
 
 %% https://fr.calameo.com/read/00087507071e3620cbe22 %%
@@ -300,7 +310,29 @@ Pour rappel, il existe différentes façon de structurer un système. Des exempl
 \begin{exo}\label{exo1} Recherchez la définition de la norme \textbf{AFNOR NF Z 68-020}, quel est son but ?\end{exo}
 
 
+\begin{exo}\label{exo1} En recherchant les informations de la norme \textbf{AFNOR NF Z 68-020}, définissez les notions suivantes :\end{exo}
+%% http://philippe.berger2.free.fr/productique/ressources/origines/origines.htm %%
+\begin{itemize}
+    \item Un axe :
+    \item Trièdre de référence : 
+    \item Axe $\overrightarrow{Z}$ :\\
+\end{itemize}
 
+Pour faire le lien entre les déplacements des axes et le code généré, vous devrez intégrer de nouvelles notions. Nous les travaillerons tout au long des deux années, mais doivent vite être connues pour notamment pouvoir effectuer la FAO (Fabrication Assisté par Ordinateur) sur CATIA.\\
+
+
+\begin{exo}\label{exo1} En recherchant les informations de la norme \textbf{AFNOR NF Z 68-021} (attention ce n'est plus la même), définissez les courses et origines suivantes (vous verrez que c'est assez subtile) :\end{exo}
+\begin{itemize}
+    \item $\overrightarrow{OM}$ :
+    \item $\overrightarrow{om}$ :
+    \item $\overrightarrow{Op}$ :
+    \item $\overrightarrow{Opp}$ :
+    \item PREF :
+    \item DEC :
+\end{itemize}
+
+
+\begin{exo}\label{exo1} D'après vous, pour quelle raison principale nous avons eu besoin de définir autant de courses et origines différentes ? \end{exo}
 
 
 
@@ -321,31 +353,39 @@ Pour rappel, il existe différentes façon de structurer un système. Des exempl
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newpage
+
+
 \section{ANNEXE}
-\begin{figure}
+Définitions :
+\begin{itemize}
+    \item CNC : Computer Numerical Control;
+    \item CU : Centre d'usinage;
+    \item CAO : Conception Assistée par Ordinateur;
+    \item FAO : Fabrication Assistée par Ordinateur.
+\end{itemize}
+
+\begin{figure}[h!]
 \begin{minipage}{.55\linewidth}
 
 \centering
-\includegraphics[width=0.7\linewidth]{S1.PNG}
-\caption{Exemple 1 : Centre d'usinage 5 axes, structure à type ouverte.}
+\includegraphics[width=0.6\linewidth]{S1.PNG}
+\caption{CU 5 axes, structure à type ouverte.}
 \label{S1}
 
 \end{minipage}
 \begin{minipage}{.44\linewidth}
 
 \centering
-\includegraphics[width=0.7\linewidth]{S2.PNG}
-\caption{Exemple 2 : Centre d'usinage 5 axes, structure à type fermée.}
+\includegraphics[width=0.6\linewidth]{S2.PNG}
+\caption{CU 5 axes, structure à type fermée.}
 \label{S2}
 
 \end{minipage}
 \end{figure}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \begin{figure}
 \centering
 \includegraphics[width=0.85\linewidth]{pos1.PNG}
@@ -410,6 +450,20 @@ Pour rappel, il existe différentes façon de structurer un système. Des exempl
 
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{mod1.PNG}
+\caption{Processus d'élaboration. D.Prévost -- ENS Cachan, 2011}
+\label{mod1}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
