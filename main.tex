@@ -114,7 +114,22 @@ numérique) et d’une partie opérative (PO) comprenant la structure de la mach
 \label{A0}
 \end{figure}
 \section{Généralités sur les MOCN}
-\textit{Savoir et connaissance du programme : S7.4.1 Caractéristiques des machines de production \& S7.4 – Machines}
+
+\begin{minipage}{.55\linewidth}
+\textit{Compétences transversales travaillées :}
+\begin{itemize}
+    \item C1 : Rechercher une information dans une documentation technique, en local ou à distance.
+\end{itemize}
+
+\end{minipage}
+\begin{minipage}{.44\linewidth}
+\textit{Savoirs du programme travaillées :}
+\begin{itemize}
+    \item S7.4.1 Caractéristiques des machines de production;
+    \item S7.4 – Machines.
+\end{itemize}
+\end{minipage}
+
 \subsection{Machine 1}
 
 \begin{exo}\label{exo1} A propos de la machine ci-dessous, rayer les mentions inutiles :
@@ -151,18 +166,7 @@ numérique) et d’une partie opérative (PO) comprenant la structure de la mach
 \end{itemize}
 \end{minipage}
 
-\begin{figure}
-\centering
-\includegraphics[width=0.7\linewidth]{MOCN11.PNG}
-\caption{MOCN 1 - Extérieur}
-\label{MOCN11}
 
-
-\centering
-\includegraphics[width=0.7\linewidth]{MOCN12.PNG}
-\caption{MOCN 1 - Intérieur}
-\label{MOCN12}
-\end{figure}
 
 
 
@@ -219,36 +223,12 @@ numérique) et d’une partie opérative (PO) comprenant la structure de la mach
 \end{itemize}
 \end{minipage}
 
-\begin{figure}
-\centering
-\includegraphics[width=0.75\linewidth]{MOCN21.PNG}
-\caption{MOCN 2 - Extérieur}
-\label{MOCN21}
-
-
-\centering
-\includegraphics[width=0.75\linewidth]{MOCN22.PNG}
-\caption{MOCN 2 - Intérieur}
-\label{MOCN22}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%% FIN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-\newpage
 
 
 \section{Fonctionnement des machines outils}
-\textit{Compétence travaillée : S7.4 – Machines}
+\textit{Savoirs travaillée : S7.4 – Machines}
 
-\begin{figure}
-\centering
-\includegraphics[width=1\linewidth]{fonction1.PNG}
-\caption{Fonction contrôle / commande d’une commande d’axe. E.Duc \& E. Lefur.}
-\label{F1}
-\end{figure}
+
 
 \begin{exo}\label{exo1} En vous aidant de la Figure \ref{F1} indiquez d'où viennent les ordres de déplacement des machines outils.\end{exo}
 %% D'après la figure, les ordres viennent de la consigne de vitesse dans le directeur de commande (C.N.)
@@ -256,18 +236,13 @@ numérique) et d’une partie opérative (PO) comprenant la structure de la mach
 \begin{exo}\label{exo1} Selon le diagramme Figure \ref{F1} de combien d'axe(s) dispose la machine outil  ?\end{exo}
 %% De trois axes %%
 
-\begin{figure}
-\centering
-\includegraphics[width=1\linewidth]{conduite1.PNG}
-\caption{Fonction conduite / surveillance d’une commande d’axe. E.Duc \& E. Lefur.}
-\label{C1}
-\end{figure}
+
 
 \begin{exo}\label{exo1} En vous aidant de la Figure \ref{C1} : Que se passe-t-il si, lors d'une erreur de programmation d'usinage, un outil force sur la pièce ?\end{exo}
 %% Si un outil force, le couple va augmenter jusqu'à détection du surcouple, la chaîne de sécurité sera alerté et l'automate,  par l'intermédiaire d'une signalisation et du contrôle du variateur, va pouvoir arrêter le processus en cours %%
 
 \section{Structures \& architectures des machines outils}
-\textit{Compétences travaillées :
+\textit{Savoirs travaillées :
 \begin{itemize}
     \item S7.4.1 – Caractéristiques des machines de production ;
     \item S3.1 – Modélisation des mécanismes ;
@@ -277,6 +252,8 @@ numérique) et d’une partie opérative (PO) comprenant la structure de la mach
 
 
 La structure articulaire (voir Figure \ref{S1} et Figure \ref{S2}) est le squelette de la machine; il se trouve sous le carter et n'est pas accessible par l'utilisateur. Par analogie au corps humain, nous parlons du squelette de la machine. Ce squelette est composé en général de liaison à \textbf{1 degré de liberté} (articulation) de type \textbf{liaison pivot} (comme notre coude) ou \textbf{liaison glissière} (comme nous, dans un toboggan !).\\
+
+
 
 Pour rappel, il existe différentes façon de structurer un système. Des exemples sont visibles sur les \textbf{Figures \ref{Se1}, Figure \ref{Par1}, Figure \ref{Par2} et Figure \ref{Par3}}.
 
@@ -289,7 +266,7 @@ Pour rappel, il existe différentes façon de structurer un système. Des exempl
 
 
 \section{Système d'axe des machines outil}
-\textit{Compétences travaillées :
+\textit{Savoirs travaillées :
 \begin{itemize}
     \item S7.4.1 : Système d’axe des machines
     \item S11.1.2 : Machines à 5 axes continus
@@ -333,12 +310,18 @@ Pour faire le lien entre les déplacements des axes et le code généré, vous d
 
 
 \begin{exo}\label{exo1} D'après vous, pour quelle raison principale nous avons eu besoin de définir autant de courses et origines différentes ? \end{exo}
+%% Sans ces différentes origines/courses, à chaque changement de pièces, outil, problème quelconque, nous devrions re-régler toute la machine outil. Grâce à elles, on peut facilement changer d'outil et ne changer qu'une seule valeur. Les différents jeu entre les pièces peuvent aussi constamment changer, c'est pourquoi nous avons besoin de beaucoup d'origines différentes. %%
 
 
 
 
-\subsection{Butées des axes machines}
+\subsection{Comment dire à la MOCN où commencer votre programme ?}
+Les machines sont aveugles, elle ne peuvent pas "savoir" ou sont vos pièces ou vos outils.
 
+
+
+\subsection{Comment dire à la MOCN de quelles formes sont vos outils ?}
+ou jauge outil
 
 
 
@@ -364,6 +347,63 @@ Définitions :
     \item CAO : Conception Assistée par Ordinateur;
     \item FAO : Fabrication Assistée par Ordinateur.
 \end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{MOCN11.PNG}
+\caption{MOCN 1 - Extérieur}
+\label{MOCN11}
+
+
+\centering
+\includegraphics[width=0.7\linewidth]{MOCN12.PNG}
+\caption{MOCN 1 - Intérieur}
+\label{MOCN12}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}
+\centering
+\includegraphics[width=0.75\linewidth]{MOCN21.PNG}
+\caption{MOCN 2 - Extérieur}
+\label{MOCN21}
+
+
+\centering
+\includegraphics[width=0.75\linewidth]{MOCN22.PNG}
+\caption{MOCN 2 - Intérieur}
+\label{MOCN22}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%% FIN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{fonction1.PNG}
+\caption{Fonction contrôle / commande d’une commande d’axe. E.Duc \& E. Lefur.}
+\label{F1}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{conduite1.PNG}
+\caption{Fonction conduite / surveillance d’une commande d’axe. E.Duc \& E. Lefur.}
+\label{C1}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{figure}[h!]
 \begin{minipage}{.55\linewidth}
