@@ -29,6 +29,15 @@
 \usepackage{amsmath}
 
 
+
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+\usepackage[pstricks]{bclogo}
+\usepackage{pst-blur}
+
+
+
+
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
 \onehalfspacing
 \setcounter{tocdepth}{5}
@@ -300,10 +309,10 @@ Pour faire le lien entre les déplacements des axes et le code généré, vous d
 
 \begin{exo}\label{exo1} En recherchant les informations de la norme \textbf{AFNOR NF Z 68-021} (attention ce n'est plus la même), définissez les courses et origines suivantes (vous verrez que c'est assez subtile) :\end{exo}
 \begin{itemize}
-    \item $\overrightarrow{OM}$ :
-    \item $\overrightarrow{om}$ :
-    \item $\overrightarrow{Op}$ :
-    \item $\overrightarrow{Opp}$ :
+    \item $OM$ :
+    \item $om$ :
+    \item $Op$ :
+    \item $Opp$ :
     \item PREF :
     \item DEC :
 \end{itemize}
@@ -316,8 +325,11 @@ Pour faire le lien entre les déplacements des axes et le code généré, vous d
 
 
 \subsection{Comment dire à la MOCN où commencer votre programme ?}
-Les machines sont aveugles, elle ne peuvent pas "savoir" ou sont vos pièces ou vos outils.
 
+\begin{tcolorbox}[colback=blue!5!white,colframe=red!75!black]
+  \bcinfo Les machines n'ont pas d'yeux, elles ne peuvent pas "savoir" où sont vos pièces ou vos outils. A la fabrication d'une machine, le constructeur aura déjà entré des paramètres internes nécessaires à son bon fonctionnement -- restera une zone usinable vide et obscure qui n'attend que d'être programmée ! C'est cette zone, totalement noire pour la machine, que vous devez éclairer : lui indiquer où sont ses mains, (les outils) et où se situe la pièce à usiner. Une fois les paramètres connus ( $\overrightarrow{OmOp}$ notamment) la machine pourra faire son job. 
+\end{tcolorbox}
+% OmOP --> Origine mesure Origine Programme %%
 
 
 \subsection{Comment dire à la MOCN de quelles formes sont vos outils ?}
@@ -405,7 +417,7 @@ Définitions :
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{figure}[h!]
+\begin{figure}
 \begin{minipage}{.55\linewidth}
 
 \centering
