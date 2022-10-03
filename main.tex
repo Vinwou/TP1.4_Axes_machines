@@ -78,23 +78,19 @@
 \maketitle
 
 \textbf{Deux personnes par groupe}\\
-
-
-Nom :  \hspace{5cm} Prénom : \\
-
-
-\vspace{1cm}
-
------------------------------------  \hspace{1cm}   ---------------------------------
-
-\vspace{1cm}
-
------------------------------------  \hspace{1cm}   ---------------------------------
+\begin{center}
+Toutes les questions seront traitées dans le documents réponse fourni
+\end{center}
 
 
 
 
-%\tableofcontents
+
+
+
+
+
+
 %-------------------------------------------------------------------------------
 % Section title formatting
 \sectionfont{\scshape}
@@ -110,8 +106,16 @@ Nom :  \hspace{5cm} Prénom : \\
 %%%%%%%%%%%%%%%% MACHINE 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\tableofcontents
+\newpage
+
+
+
 \subsection*{Conseils pour le TP:}
-\textit{Comme pour tous les TPs, il est conseillé de lire toutes les pages une première fois, comme pour un sujet de BTS. Vous noterez que beaucoup d'informations sont dans les annexes (comme au BTS). Certaines définitions et figures sont "en plus". Avant de poser une question, lisez bien tout le dossier. Ne perdez pas de temps, car les TPs sont fait pour la durée entière : 3h. En plus de comprendre et apprendre, vous devrez écrire vos réponses au propre. Il vous est fortement conseillé de vous partager le travail entre vous deux.}\\
+\begin{tcolorbox}[colback=blue!5!white,colframe=red!75!black]
+  \bcinfo Comme pour tous les TPs, il est conseillé de lire toutes les pages une première fois, comme pour un sujet de BTS. Vous noterez que beaucoup d'informations sont dans les annexes (comme au BTS). Certaines définitions et figures sont "en plus". Avant de poser une question, lisez bien tout le dossier. Ne perdez pas de temps, car les TPs sont conçus pour la durée entière : 3h. En plus de comprendre et apprendre, vous devrez écrire vos réponses au propre. Il vous est fortement conseillé de vous partager le travail entre vous deux.
+\end{tcolorbox}
+
 
 Une machine outil à commande numérique, appelée communément MOCN, est un système
 automatisé. Elle est composée d’une partie commande (PC) : le DCN (directeur de commande
@@ -122,6 +126,9 @@ numérique) et d’une partie opérative (PO) comprenant la structure de la mach
 \caption{Analyse fonctionnelle niveau A-0}
 \label{A0}
 \end{figure}
+
+\newpage
+
 \section{Généralités sur les MOCN}
 
 \begin{minipage}{.55\linewidth}
@@ -138,6 +145,7 @@ numérique) et d’une partie opérative (PO) comprenant la structure de la mach
     \item S7.4 – Machines.
 \end{itemize}
 \end{minipage}
+
 
 \subsection{Machine 1}
 
@@ -232,7 +240,7 @@ numérique) et d’une partie opérative (PO) comprenant la structure de la mach
 \end{itemize}
 \end{minipage}
 
-
+\newpage
 
 \section{Fonctionnement des machines outils}
 \textit{Savoirs travaillée : S7.4 – Machines}
@@ -304,8 +312,7 @@ Pour rappel, il existe différentes façon de structurer un système. Des exempl
     \item Axe $\overrightarrow{Z}$ :\\
 \end{itemize}
 
-Pour faire le lien entre les déplacements des axes et le code généré, vous devrez intégrer de nouvelles notions. Nous les travaillerons tout au long des deux années, mais doivent vite être connues pour notamment pouvoir effectuer la FAO (Fabrication Assisté par Ordinateur) sur CATIA.\\
-
+Pour faire le lien entre les déplacements des axes et le code généré, vous devrez intégrer de nouvelles notions. Nous les travaillerons tout au long des deux années, mais doivent vite être connues pour notamment pouvoir effectuer la FAO (Fabrication Assisté par Ordinateur) sur CATIA.
 
 \begin{exo}\label{exo1} En recherchant les informations de la norme \textbf{AFNOR NF Z 68-021} (attention ce n'est plus la même), définissez les courses et origines suivantes (vous verrez que c'est assez subtile) :\end{exo}
 \begin{itemize}
@@ -317,6 +324,8 @@ Pour faire le lien entre les déplacements des axes et le code généré, vous d
     \item DEC :
 \end{itemize}
 
+\begin{exo}\label{exo66} Parmi les 6 éléments ci-dessus, entourez \textbf{en rouge} ceux qui, selon vous, sont des vecteurs\footnote{Certains de ces éléments sont des points matériels, d'autres sont des distances orientées, des vecteurs. Pour rappel, si vous avez deux origines dans vos machines qui sont : $\vec{O_1} =\begin{pmatrix} 2mm\\0\\5mm \end{pmatrix}$ et $\vec{O_2} =\begin{pmatrix} 1mm\\3mm\\0 \end{pmatrix}$ alors vous pouvez construire un vecteur qui représente la distance entre eux deux : $\overrightarrow{O_1O_2} =\begin{pmatrix} 2 + 1mm\\0 + 3 mm\\5 + 0mm \end{pmatrix}=\begin{pmatrix} 3mm\\3 mm\\5mm \end{pmatrix}$ Et nous pourrions nommer ce vecteur pour qu'il soit plus représentatif de ce que nous voulons :\\ $\overrightarrow{O_1O_2}=\overrightarrow{Dimension De La Piece}=\begin{pmatrix} 3mm\\3 mm\\5mm \end{pmatrix}$ C'est le même principe pour cette question.}(deux éléments attendus).  \end{exo}
+
 
 \begin{exo}\label{exo1} D'après vous, pour quelle raison principale nous avons eu besoin de définir autant de courses et origines différentes ? \end{exo}
 %% Sans ces différentes origines/courses, à chaque changement de pièces, outil, problème quelconque, nous devrions re-régler toute la machine outil. Grâce à elles, on peut facilement changer d'outil et ne changer qu'une seule valeur. Les différents jeu entre les pièces peuvent aussi constamment changer, c'est pourquoi nous avons besoin de beaucoup d'origines différentes. %%
@@ -325,17 +334,67 @@ Pour faire le lien entre les déplacements des axes et le code généré, vous d
 
 
 \subsection{Comment dire à la MOCN où commencer votre programme ?}
+\subsubsection{Le PREF}
+%% http://robert.cireddu.free.fr/Progression/Formation%20en%20PRODUCTIQUE.html %%
 
 \begin{tcolorbox}[colback=blue!5!white,colframe=red!75!black]
   \bcinfo Les machines n'ont pas d'yeux, elles ne peuvent pas "savoir" où sont vos pièces ou vos outils. A la fabrication d'une machine, le constructeur aura déjà entré des paramètres internes nécessaires à son bon fonctionnement -- restera une zone usinable vide et obscure qui n'attend que d'être programmée ! C'est cette zone, totalement noire pour la machine, que vous devez éclairer : lui indiquer où sont ses mains, (les outils) et où se situe la pièce à usiner. Une fois les paramètres connus ( $\overrightarrow{OmOp}$ notamment) la machine pourra faire son job. 
 \end{tcolorbox}
 % OmOP --> Origine mesure Origine Programme %%
+%% Om est le tout premier point, première ref, on ne peut pas le modifier ?
+
+\begin{exo}\label{exo1} Sur les deux figures ci-dessous (vue de coté et vue du dessus), inscrivez \textbf{en rouge} l'origine OP et tracez les distances $\overrightarrow{PREF_X}$, $\overrightarrow{PREF_Y}$ et $\overrightarrow{PREF_Z}$.\end{exo}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{OmOP1.JPG}
+\includegraphics[width=0.8\linewidth]{OmOP2.JPG}
+\end{center}
+
+\subsubsection{Le DEC}
+\begin{tcolorbox}[colback=blue!5!white,colframe=red!75!black]
+  \bcinfo Le $DEC(\vec{x}, \vec{y}, \vec{z})$, c'est un peu comme le vecteur PREF, mais certaines fois il n'est pas utilisé. Par exemple, quand nous ne fabriquons qu'une seule pièce (série unitaire, ou prototype). Cependant, le DEC devient utile quand nous devons usiner plusieurs lots avec des pièces ou porte-pièces différents. Vous êtes en BTS CPRP option sérielle, nous utiliserons donc toujours le DEC.
+\end{tcolorbox}
+
+
+\begin{exo}\label{exo1} Sur les deux figures ci-dessous (vue de coté et vue du dessus), inscrivez \textbf{en rouge} l'origine OP et Opp et tracez les distances $\overrightarrow{PREF_X}$, $\overrightarrow{PREF_Y}$ et $\overrightarrow{PREF_Z}$ ainsi que les $\overrightarrow{DEC_X}$, $\overrightarrow{DEC_Y}$ et $\overrightarrow{DEC_Z}$.\end{exo}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{DEC1.JPG}
+\includegraphics[width=0.85\linewidth]{DEC2.JPG}
+\end{center}
+
+\subsection*{En tournage}
+Vous devriez avoir compris le principe des PREF et DEC, mais alors, où sont ces origines et vecteurs pour le cas du tournage ?\\
+\begin{exo}\label{exo1} Sur la figures ci-dessous, inscrivez \textbf{en rouge} les axes de la machine, l'origine \textbf{OP} et \textbf{Opp} et tracez les distances $\overrightarrow{PREF_X}$, $\overrightarrow{PREF_Y}$ et $\overrightarrow{PREF_Z}$ ainsi que les $\overrightarrow{DEC_X}$, $\overrightarrow{DEC_Y}$ et $\overrightarrow{DEC_Z}$.\end{exo}
+\begin{center}
+\includegraphics[width=0.9\linewidth]{PREFDEC1.JPG}
+\end{center}
 
 
 \subsection{Comment dire à la MOCN de quelles formes sont vos outils ?}
-ou jauge outil
+\begin{tcolorbox}[colback=blue!5!white,colframe=red!75!black]
+  \bcinfo Nous avons rendu ses yeux à la machine pour ce qui concerne la pièce, maintenant nous devons lui montrer ses mains (les outils).
+\end{tcolorbox}
+
+\subsubsection{Le cas du tournage}
+Que sont les \textbf{jauges outil} ? Ce sont les valeurs de longueur de l’outil entre l’origine porte outils et le point générateur (le point qui va usiner). Cette valeur permet de décaler la tourelle afin que ce soit le point générateur qui soit à la position programmée (on a besoin de 2 valeurs, 1 longueur et 1 rayon). Pour définir correctement les jauges outils d’un tour, il faut lui attribuer sa jauge en $\vec{X}$ et en $\vec{Z}$, le
+rayon de plaquette R et le cadran de travail pour la correction d’outil.
 
 
+\begin{exo}\label{exo1} Sur la figures ci-dessous, tracer \textbf{en rouge} les jauges des outils pour le cas d'un tour.\end{exo}
+\includegraphics[width=1.05\linewidth]{jauge1.JPG}
+
+
+\subsubsection{Le cas du fraisage}
+Pour définir les jauges d’un outil de fraisage, Il faut lui attribuer une jauge L qui est sa longueur sur $\vec{Z}$, et une jauge R qui est son rayon sur $\vec{X}$ et $\vec{Y}$.
+
+
+\begin{exo}\label{exo1} Sur la figures ci-dessous, tracer \textbf{en rouge} les jauges des outils pour le cas d'un centre d'usinage.\end{exo}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{jauge2.JPG}
+\end{center}
+
+Les jauges sont mesurées Statiquement sur un banc de pré-réglage (TP que vous effectuerez en Production) ou effectuées sur la machine. La mesure du rayon de fraise peut s’effectuer à l’extérieur de la machine, ce qui n’inclut pas un
+faux rond éventuel du au montage de l’outil dans le porte outil ou à un affûtage défectueux. La mesure de longueur doit toujours tenir compte de l’affûtage de la fraise, il faut prendre la dent la plus longue.\\
+Dans le prochain TP nous apprendrons à nommer et identifier les différents outils de production.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
